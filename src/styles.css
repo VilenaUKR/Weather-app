@@ -114,3 +114,7 @@ img.blue_sky {
   right: 0;
   text-align: center;
 }
+bottom,
+#github-code-link {
+  color: #3d6cd1;
+}
