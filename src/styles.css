@@ -1,6 +1,6 @@
 html,
 body {
-  background-image: url(src/blue_sky.jpg);
+  background-image: url(blue_sky.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -21,7 +21,7 @@ img.blue_sky {
   left: 0;
 }
 .container {
-  background-image: url(src/pink.jpg);
+  background-image: url(pink.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
