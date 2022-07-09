@@ -1,6 +1,5 @@
-html,
 body {
-  background-image: url(blue_sky.jpg);
+  background-image: url(video.mp4);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -11,110 +10,95 @@ body {
   align-items: center;
 }
 
-img.blue_sky {
-  min-height: 100%;
-  min-width: 640px;
-  width: 100%;
-  height: auto;
+#myVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   position: fixed;
-  top: 0;
   left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
+
 .container {
-  background-image: url(pink.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   border-color: none;
   padding: 40px 20px 20px;
-  border-radius: 1%;
+  border-radius: 3%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin-block: 50px;
+  opacity: 90%;
+  margin: 90px;
 }
 
-.enter-city,
-.input-group-submit,
-.city {
+#show-city {
   margin-right: 20px;
   text-align: right;
-  border-color: none;
 }
 
-.enter-city {
-  padding: 5px 0px 5px;
+input[type="text"],
+input[type="submit"],
+input[type="button"] {
+  background-color: #00ffff4d;
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  font-size: large;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   
 }
-
-.enter-city,
-.input-group-submit {
-  padding: 0;
-}
-
-.city {
-  float: right;
-  width: 100%;
-}
+::placeholder { 
+  color: rgb(0, 0, 0);
+  opacity: 1; }
 
 .city .card {
-  background: rgba(255, 255, 255, 255);
-  text-align: right;
-  padding-left: 100px;
-  margin: 30px 0px;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  margin: 10px 0px;
   margin-right: 0px;
   border-color: none;
   float: right;
-  border-radius: 3%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5%;
+  text-align: right;
 }
 .card-title,
 .emoji {
-  text-align: left;
-  font-size: 22px;
+  font-size: 50px;
+  font-weight: 600;
 }
 
 .card-text {
-  font-size: 18px;
+  font-size: 38px;
 }
 .temperature {
-  font-size: 22px;
+  font-size: 45px;
 }
 .degrees {
-  font-size: 12px;
+  font-size: 22px;
   float: right;
 }
 .row {
-  margin: 0;
-  display: block;
-  text-align: center;
-}
-
-.column {
-  display: inline-flex;
+  margin-top: 20em;
 }
 
 .row .card {
+  background: linear-gradient(180deg, #00ffff4d, #696a6acc);
   border-color: none;
-  border-width: 1px;
-  padding: 65px 45px;
-  margin: 10px 27px;
+  border-width: 0px;
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
-  border-radius: 3%;
+  border-radius: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .text {
-  position: absolute;
-  top: 20px;
-  bottom: 0;
-  left: 0;
-  right: 0;
   text-align: center;
 }
-bottom,
+footer,
 #github-code-link {
-  color: #3d6cd1;
+  color: #000000;
+  margin-left: 220px;
+  font-size: medium;
 }

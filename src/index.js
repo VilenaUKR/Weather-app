@@ -7,7 +7,7 @@ let days = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday"
+  "Sunday",
 ];
 let day = days[now.getDay()];
 let months = [
@@ -17,12 +17,12 @@ let months = [
   "April",
   "May",
   "June",
-  "Jule",
+  "July",
   "August",
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 let month = months[now.getMonth()];
 
