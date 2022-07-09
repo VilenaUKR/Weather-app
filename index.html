@@ -20,33 +20,43 @@
 
   <body>
     <div class="container" style="max-width:850px">
-      <form id="show-city">
-        <div class="enter-city">
-          <input type="text" id="enter-city" placeholder="Please, enter a city" autofocus="on" autocomplete="off" size="21"/>
+      <div class="row" id="container">
+        <div class="col-8">
+                    <div class="row" id="main-card">
+                       <div class="card"><span class="emoji" id="sun">☀</span>
+              <div class="card-body">
+                <span class="card-title" id="card-title">Kyiv</span>
+                <span class="temperature" id="temperature">19</span>
+                <span class="degrees">
+                  <a href="#" id="celsius-degrees-link">°C</a> |
+                  <a href="#" id="fahrenheit-degrees-link">°F</a>
+                </span>
+                <h5 class="card-text" id="currant-day">
+              </h5>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="input-group-submit">
-          <input type="button" value="Currant location" id="currant-location" />
-          <input type="submit" value="Search" id="search" />
-        </div>
-      </form>
-      <div class="city">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title" id="card-title">Kyiv</span>
-            <span class="emoji" id="sun">☀</span>
-
-            <h5 class="card-text" id="currant-day">
-            </h5>
-            <h5 class="text-bold"><span class="temperature" id="temperature">19</span>
-              <span class="degrees">
-                <a href="#" id="celsius-degrees-link">°C</a> |
-                <a href="#" id="fahrenheit-degrees-link">°F</a>
-              </span>
-            </h5>
+        <div class="col-4">
+          <form id="show-city">
+            <div class="enter-city">
+              <input type="text" id="enter-city" placeholder="Please, enter a city" autofocus="on" autocomplete="off"
+                size="21" />
+            </div>
+            <div class="input-group-submit">
+              <input type="button" value="Currant location" id="currant-location" />
+              <input type="submit" value="Search" id="search" />
+            </div>
+          </form>
+          <div class="weather-descriptions">
+            <div class="col-4" id="currant-date"></div>
+            <div class="col-4">Humidity:</div>
+            <div class="col-4">Wind:</div>
+            
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" id="cards">
         <div class="col-sm-2">
           <div class="card" style="width: autom">
             <div class="card-body">

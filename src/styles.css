@@ -24,81 +24,101 @@ body {
 
 .container {
   border-color: none;
-  padding: 40px 20px 20px;
+  padding: 30px 30px;
   border-radius: 3%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   opacity: 90%;
-  margin: 90px;
-}
+  display: block;
+  margin-top: 130px;
+ }
 
-#show-city {
-  margin-right: 20px;
-  text-align: right;
-}
-
-input[type="text"],
-input[type="submit"],
-input[type="button"] {
-  background-color: #00ffff4d;
-  border: none;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  font-size: large;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-   
-}
-::placeholder { 
-  color: rgb(0, 0, 0);
-  opacity: 1; }
-
-.city .card {
+#main-card{
+  margin-left: 20px;
   background: rgba(255, 255, 255, 0);
   border: none;
-  margin: 10px 0px;
-  margin-right: 0px;
   border-color: none;
-  float: right;
   border-radius: 5%;
-  text-align: right;
 }
+
 .card-title,
 .emoji {
   font-size: 50px;
   font-weight: 600;
-}
+ }
 
 .card-text {
   font-size: 38px;
 }
 .temperature {
   font-size: 45px;
+  margin-left: 30px;
 }
 .degrees {
   font-size: 22px;
   float: right;
-}
-.row {
-  margin-top: 20em;
+  }
+
+.weather-descriptions
+ {
+     margin-bottom: 35px;
+  width: 100%;
 }
 
-.row .card {
+input[type="text"],
+input[type="submit"],
+input[type="button"],
+.weather-descriptions
+ {
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  font-size: large;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   margin-right: 10px;
+   float: right;
+}
+::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 1;
+}
+#currant-date{
+  display: inline;
+   font-size: 25px;
+  font-weight: 700;
+}
+
+.weather-descriptions{
+   font-size: 20px;
+}
+
+
+#weather-descriptions {
+  margin-top: 30px;
+}
+
+.row .card{
   background: linear-gradient(180deg, #00ffff4d, #696a6acc);
   border-color: none;
   border-width: 0px;
+  margin-bottom: 30px;
   text-align: center;
   font-weight: 500;
   font-size: 20px;
   border-radius: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
+ #cards{
+  margin-top: 20px;
+  display: inline-flex;
+ }
 .text {
   text-align: center;
 }
 footer,
 #github-code-link {
   color: #000000;
-  margin-left: 220px;
+  text-align: center;
   font-size: medium;
 }

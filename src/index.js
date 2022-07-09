@@ -39,7 +39,9 @@ let year = now.getFullYear();
 
 function showCurrentDate() {
   let currantDay = document.querySelector("#currant-day");
-  currantDay.innerHTML = `${day} ${hours}:${minutes}<br>${month} ${date}, ${year}`;
+  let currantDate = document.querySelector("#currant-date");
+  currantDay.innerHTML = `${day} ${hours}:${minutes}`;
+ currantDate.innerHTML = `${month} ${date}, ${year}`;
 }
 showCurrentDate();
 
