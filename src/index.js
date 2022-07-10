@@ -1,13 +1,13 @@
 let now = new Date();
 
 let days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 let day = days[now.getDay()];
 let months = [
@@ -41,7 +41,7 @@ function showCurrentDate() {
   let currantDay = document.querySelector("#currant-day");
   let currantDate = document.querySelector("#currant-date");
   currantDay.innerHTML = `${day} ${hours}:${minutes}`;
- currantDate.innerHTML = `${month} ${date}, ${year}`;
+  currantDate.innerHTML = `${month} ${date}, ${year}`;
 }
 showCurrentDate();
 
@@ -61,8 +61,6 @@ let fahrenheitDegrees = document.querySelector("#fahrenheit-degrees-link");
 fahrenheitDegrees.addEventListener("click", convertToFahrenheit);
 let celsiusDegrees = document.querySelector("#celsius-degrees-link");
 celsiusDegrees.addEventListener("click", convertToCelsius);
-
-// Homework
 
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -92,10 +90,16 @@ showCityForm.addEventListener("submit", showCity);
 function showCurrentTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
+  let mainEmojiDescription = document.querySelector("#main-emoji-description");
   let cardTitle = document.querySelector("#card-title");
   let CurrentCityName = response.data.name;
+  let humidityElement = document.querySelector("#humidity-element");
+  let windSpeed = document.querySelector("#wind-speed");
+  mainEmojiDescription.innerHTML = response.data.weather[0].description;
   cardTitle.innerHTML = `${CurrentCityName}`;
   temperatureElement.innerHTML = `${temperature}`;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function showCurrentPosition(position) {

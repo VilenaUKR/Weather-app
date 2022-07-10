@@ -24,11 +24,12 @@
         <div class="row" id="container">
           <div class="col-8">
             <div class="row" id="main-card">
-              <div class="card"><span class="emoji" id="sun">☀</span>
+              <div class="card"><span class="emoji" id="sun">☀</span><span class="main-emoji-description"
+                  id="main-emoji-description">Cloudy</span>
                 <div class="card-body">
                   <span class="card-title" id="card-title">Kyiv</span>
                   <span class="temperature" id="temperature">19</span>
-                  <span class="degrees">
+                  <span class="units">
                     <a href="#" id="celsius-degrees-link">°C</a> |
                     <a href="#" id="fahrenheit-degrees-link">°F</a>
                   </span>
@@ -50,8 +51,8 @@
             </form>
             <div class="weather-descriptions">
               <div class="col-4" id="currant-date"></div>
-              <div class="col-4" id="humidity">Humidity:</div>
-              <div class="col-4" id="wind">Wind:</div>
+              <div class="col-4" id="humidity">Humidity: <span id="humidity-element"></span>%</div>
+              <div class="col-4" id="wind">Wind: <span id="wind-speed"></span> km/h</div>
             </div>
           </div>
         </div>
