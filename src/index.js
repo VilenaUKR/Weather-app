@@ -87,6 +87,8 @@ function showCity(event) {
 let showCityForm = document.querySelector("#show-city");
 showCityForm.addEventListener("submit", showCity);
 
+///
+
 function showCurrentTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
@@ -94,12 +96,18 @@ function showCurrentTemperature(response) {
   let cardTitle = document.querySelector("#card-title");
   let CurrentCityName = response.data.name;
   let humidityElement = document.querySelector("#humidity-element");
-  let windSpeed = document.querySelector("#wind-speed");
+  let windSpeedElement = document.querySelector("#wind-speed");
+  let iconElement = document.querySelector("#icon");
+
   mainEmojiDescription.innerHTML = response.data.weather[0].description;
   cardTitle.innerHTML = `${CurrentCityName}`;
   temperatureElement.innerHTML = `${temperature}`;
   humidityElement.innerHTML = response.data.main.humidity;
-  windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/04d@2x.png`
+  );
 }
 
 function showCurrentPosition(position) {
