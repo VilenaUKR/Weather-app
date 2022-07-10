@@ -19,109 +19,107 @@
   </head>
 
   <body>
-    <div class="container" style="max-width:850px">
-      <div class="row" id="container">
-        <div class="col-8">
-                    <div class="row" id="main-card">
-                       <div class="card"><span class="emoji" id="sun">☀</span>
+    <div class="container-wrapper" style="max-width:850px">
+      <div class="container" style="max-width:850px">
+        <div class="row" id="container">
+          <div class="col-8">
+            <div class="row" id="main-card">
+              <div class="card"><span class="emoji" id="sun">☀</span>
+                <div class="card-body">
+                  <span class="card-title" id="card-title">Kyiv</span>
+                  <span class="temperature" id="temperature">19</span>
+                  <span class="degrees">
+                    <a href="#" id="celsius-degrees-link">°C</a> |
+                    <a href="#" id="fahrenheit-degrees-link">°F</a>
+                  </span>
+                  <h5 class="card-text" id="currant-day">
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <form id="show-city">
+              <div class="enter-city">
+                <input type="text" id="enter-city" placeholder="Enter a city... 🙂" autofocus="on" autocomplete="off" />
+              </div>
+              <div class="input-group-submit">
+                <input type="button" value="Currant location" id="currant-location" />
+                <input type="submit" value="Search" id="search" />
+              </div>
+            </form>
+            <div class="weather-descriptions">
+              <div class="col-4" id="currant-date"></div>
+              <div class="col-4" id="humidity">Humidity:</div>
+              <div class="col-4" id="wind">Wind:</div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center" id="cards">
+          <div class="col-sm-2">
+            <div class="card" style="width: autom">
               <div class="card-body">
-                <span class="card-title" id="card-title">Kyiv</span>
-                <span class="temperature" id="temperature">19</span>
-                <span class="degrees">
-                  <a href="#" id="celsius-degrees-link">°C</a> |
-                  <a href="#" id="fahrenheit-degrees-link">°F</a>
-                </span>
-                <h5 class="card-text" id="currant-day">
-              </h5>
+                <h4 class="cardTemperature">12℃</h4>
+                <h4 class="dayOfWeek">Mon</h4>
+                <h5 class="card-title">💨</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: autom">
+              <div class="card-body">
+                <h5 class="card-title">💨</h5>
+                <h4 class="dayOfWeek">Mon</h4>
+                <h4 class="cardTemperature">12℃</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card" style="width: autom">
+              <div class="card-body">
+                <h4 class="cardTemperature">12℃</h4>
+                <h4 class="dayOfWeek">Mon</h4>
+                <h5 class="card-title">💨</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: autom">
+              <div class="card-body">
+                <h5 class="card-title">💨</h5>
+                <h4 class="dayOfWeek">Mon</h4>
+                <h4 class="cardTemperature">12℃</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="card" style="width: autom">
+              <div class="card-body">
+                <h4 class="cardTemperature">12℃</h4>
+                <h4 class="dayOfWeek">Mon</h4>
+                <h5 class="card-title">💨</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card" style="width: autom">
+              <div class="card-body">
+                <h5 class="card-title">💨</h5>
+                <h4 class="dayOfWeek">Mon</h4>
+                <h4 class="cardTemperature">12℃</h4>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-4" >
-          <form id="show-city">
-            <div class="enter-city">
-              <input type="text" id="enter-city" placeholder="Enter a city... 🙂" autofocus="on" autocomplete="off" />
-            </div>
-            <div class="input-group-submit">
-              <input type="button" value="Currant location" id="currant-location" />
-              <input type="submit" value="Search" id="search" />
-            </div>
-          </form>
-          <div class="weather-descriptions">
-            <div class="col-4" id="currant-date"></div>
-            <div class="col-4" id="humidity">Humidity:</div>
-            <div class="col-4" id="wind">Wind:</div>
-            
-          </div>
-        </div>
       </div>
-      <div class="row justify-content-center" id="cards">
-        <div class="col-sm-2">
-          <div class="card" style="width: autom">
-            <div class="card-body">
-              <h4 class="cardTemperature">12℃</h4>
-              <h4 class="dayOfWeek">Mon</h4>
-              <h5 class="card-title">💨</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="card" style="width: autom">
-            <div class="card-body">
-              <h5 class="card-title">💨</h5>
-              <h4 class="dayOfWeek">Mon</h4>
-              <h4 class="cardTemperature">12℃</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="card" style="width: autom">
-            <div class="card-body">
-              <h4 class="cardTemperature">12℃</h4>
-              <h4 class="dayOfWeek">Mon</h4>
-              <h5 class="card-title">💨</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="card" style="width: autom">
-            <div class="card-body">
-              <h5 class="card-title">💨</h5>
-              <h4 class="dayOfWeek">Mon</h4>
-              <h4 class="cardTemperature">12℃</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="card" style="width: autom">
-            <div class="card-body">
-              <h4 class="cardTemperature">12℃</h4>
-              <h4 class="dayOfWeek">Mon</h4>
-              <h5 class="card-title">💨</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="card" style="width: autom">
-            <div class="card-body">
-              <h5 class="card-title">💨</h5>
-              <h4 class="dayOfWeek">Mon</h4>
-              <h4 class="cardTemperature">12℃</h4>
-            </div>
-          </div>
-        </div>
-      </div>
+      <footer> This project was coded by by Vilena
+        Martirosova and <a href="https://github.com/VilenaUKR/Weather-app" id="github-code-link" target="_blank">is
+          open-sourced on
+          GitHub</a> and hosted on Netlify </footer>
     </div>
-    <footer> <a href="https://github.com/VilenaUKR/Weather-app" id="github-code-link">Open source code </a> by Vilena
-      Martirosova</footer>
-    </div>
-
-
     <script src="src/index.js"></script>
   </body>
 
