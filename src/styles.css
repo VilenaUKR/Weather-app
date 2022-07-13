@@ -24,18 +24,17 @@ body {
 .container-wrapper {
   display: block;
   margin: auto;
-  font-family: "Poppins", sans-serif;
-}
+ }
 
 .container {
-  background: linear-gradient(180deg, #5f82bb, #00ffff3d);
+  background: linear-gradient(180deg, #6d95d6, #00ffff3d);
   backdrop-filter: blur(0.5px);
   border-color: none;
   padding: 30px 30px 30px 30px;
   border-radius: 3%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 100px;
-  font-family: "Poppins", sans-serif;
+font-family:'Pacifico' monospace;
 }
 
 .row #main-card {
@@ -78,12 +77,23 @@ body {
   font-size: 45px;
   margin-left: 20px;
 }
+
 .units {
   position: relative;
   font-size: 22px;
   float: right;
   top: -8px;
 }
+
+.units .active{
+  color: #000;
+  cursor: default;
+}
+
+.units .active:hover{
+   text-decoration: none;
+ }
+
 
 .card-text {
   font-size: 30px;
@@ -121,7 +131,7 @@ input[type="button"] {
 }
 
 input[type="submit"] {
-  margin-left: 11px;
+  margin-left: -1px;
 }
 
 ::placeholder {
@@ -132,7 +142,7 @@ input[type="submit"] {
 #currant-date {
   display: inline;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 500;
   padding: 0;
 }
 

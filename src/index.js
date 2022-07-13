@@ -46,26 +46,6 @@ function formatDate(timestamp) {
   return `${month} ${date}, ${year}`;
 }
 
-///////
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-}
-
-let fahrenheitDegrees = document.querySelector("#fahrenheit-degrees-link");
-fahrenheitDegrees.addEventListener("click", convertToFahrenheit);
-let celsiusDegrees = document.querySelector("#celsius-degrees-link");
-celsiusDegrees.addEventListener("click", convertToCelsius);
-
-///
-
 function showCurrentTemperature(response) {
   let currantDayElement = document.querySelector("#currant-day");
   let currantDateElement = document.querySelector("#currant-date");
@@ -76,11 +56,12 @@ function showCurrentTemperature(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#icon");
   //
+  celsiusTemperature = response.data.main.temp;
   cityElement.innerHTML = response.data.name;
   currantDayElement.innerHTML = formatDay(response.data.dt * 1000);
   currantDateElement.innerHTML = formatDate(response.data.dt * 1000);
   mainIconDescription.innerHTML = response.data.weather[0].description;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
@@ -90,8 +71,6 @@ function showCurrentTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-///////
-
 function showCity(city) {
   let apiKey = "47cf9a4f3105e2e2829ab9feb92923d1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -100,20 +79,49 @@ function showCity(city) {
 
 function searchSubmit(event) {
   event.preventDefault();
-    let enterCity = document.querySelector("#enter-city");
-     let cardTitle = document.querySelector("#card-title");
-    if (enterCity.value) {
-       cardTitle.innerHTML = `${enterCity.value}`;
-      } else {
-   alert("Please, enter a city");
+  let inputCity = document.querySelector("#enter-city");
+  
+  let cardTitle = document.querySelector("#card-title");
+  if (inputCity.value) {
+    cardTitle.innerHTML = `${inputCity.value}`;
+  } else {
+    alert("Please, enter a city 🤷‍♂️");
   }
+  showCity(inputCity.value);
 }
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusDegrees.classList.remove("active");
+  fahrenheitDegrees.classList.add("active");
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusDegrees.classList.add("active");
+  fahrenheitDegrees.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let celsiusDegrees = document.querySelector("#celsius-degrees-link");
+celsiusDegrees.addEventListener("click", convertToCelsius);
+
+let fahrenheitDegrees = document.querySelector("#fahrenheit-degrees-link");
+fahrenheitDegrees.addEventListener("click", convertToFahrenheit);
 
 let showCityForm = document.querySelector("#show-city");
 showCityForm.addEventListener("submit", searchSubmit);
 
+showCity("Kyiv");
 
 //// current
+
 function showCurrentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -128,5 +136,3 @@ function getCurrentPosition(event) {
 }
 let buttonCurrentPosition = document.querySelector("#currant-location");
 buttonCurrentPosition.addEventListener("click", getCurrentPosition);
-
-showCity("Kyiv");
