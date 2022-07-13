@@ -1,50 +1,52 @@
-let now = new Date();
+function formatDay(timestamp) {
+  let now = new Date(timestamp);
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let weekDay = weekDays[now.getDay()];
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "Fabruary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  return `${weekDay} ${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let date = now.getDate();
-let year = now.getFullYear();
 
-function showCurrentDate() {
-  let currantDay = document.querySelector("#currant-day");
-  let currantDate = document.querySelector("#currant-date");
-  currantDay.innerHTML = `${day} ${hours}:${minutes}`;
-  currantDate.innerHTML = `${month} ${date}, ${year}`;
-}
-showCurrentDate();
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let months = [
+    "January",
+    "Fabruary",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let date = now.getDate(timestamp);
+  let year = now.getFullYear();
+  let month = months[now.getMonth()];
 
+  return `${month} ${date}, ${year}`;
+}
+
+///////
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -62,54 +64,56 @@ fahrenheitDegrees.addEventListener("click", convertToFahrenheit);
 let celsiusDegrees = document.querySelector("#celsius-degrees-link");
 celsiusDegrees.addEventListener("click", convertToCelsius);
 
-function showTemperature(response) {
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.main.temp);
-  temperatureElement.innerHTML = `${temperature}`;
-}
-
-function showCity(event) {
-  event.preventDefault();
-  let enterCity = document.querySelector("#enter-city");
-  let cardTitle = document.querySelector("#card-title");
-  if (enterCity.value) {
-    cardTitle.innerHTML = `${enterCity.value}`;
-  } else {
-    cardTitle.innerHTML = "Kyiv";
-    alert("Please, enter a city");
-  }
-
-  let apiKey = "47cf9a4f3105e2e2829ab9feb92923d1";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${enterCity.value}&appid=${apiKey}&units=metric`;
-  axios.get(`${apiUrl}`).then(showTemperature);
-}
-
-let showCityForm = document.querySelector("#show-city");
-showCityForm.addEventListener("submit", showCity);
-
 ///
 
 function showCurrentTemperature(response) {
+  let currantDayElement = document.querySelector("#currant-day");
+  let currantDateElement = document.querySelector("#currant-date");
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.main.temp);
-  let mainEmojiDescription = document.querySelector("#main-emoji-description");
-  let cardTitle = document.querySelector("#card-title");
-  let CurrentCityName = response.data.name;
+  let mainIconDescription = document.querySelector("#main-emoji-description");
+  let cityElement = document.querySelector("#card-title");
   let humidityElement = document.querySelector("#humidity-element");
   let windSpeedElement = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#icon");
-
-  mainEmojiDescription.innerHTML = response.data.weather[0].description;
-  cardTitle.innerHTML = `${CurrentCityName}`;
-  temperatureElement.innerHTML = `${temperature}`;
+  //
+  cityElement.innerHTML = response.data.name;
+  currantDayElement.innerHTML = formatDay(response.data.dt * 1000);
+  currantDateElement.innerHTML = formatDate(response.data.dt * 1000);
+  mainIconDescription.innerHTML = response.data.weather[0].description;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/04d@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+///////
+
+function showCity(city) {
+  let apiKey = "47cf9a4f3105e2e2829ab9feb92923d1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(showCurrentTemperature);
+}
+
+function searchSubmit(event) {
+  event.preventDefault();
+    let enterCity = document.querySelector("#enter-city");
+     let cardTitle = document.querySelector("#card-title");
+    if (enterCity.value) {
+       cardTitle.innerHTML = `${enterCity.value}`;
+      } else {
+   alert("Please, enter a city");
+  }
+}
+
+let showCityForm = document.querySelector("#show-city");
+showCityForm.addEventListener("submit", searchSubmit);
+
+
+//// current
 function showCurrentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -118,8 +122,11 @@ function showCurrentPosition(position) {
   axios.get(`${apiUrl}`).then(showCurrentTemperature);
 }
 
-function getCurrentPosition() {
+function getCurrentPosition(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 let buttonCurrentPosition = document.querySelector("#currant-location");
 buttonCurrentPosition.addEventListener("click", getCurrentPosition);
+
+showCity("Kyiv");
