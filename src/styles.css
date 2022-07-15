@@ -24,16 +24,18 @@ body {
 .container-wrapper {
   display: block;
   margin: auto;
- }
+}
 
 .container {
   background: linear-gradient(180deg, #6d95d6, #00ffff3d);
   backdrop-filter: blur(0.5px);
   border-color: none;
   padding: 30px 30px 30px 30px;
-  border-radius: 3%;
+  border-radius: 2%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 100px;
+  font-family: Verdana, Tahoma, sans-serif, monospace;
+  color: rgb(0, 18, 21);
 }
 
 .row #main-card {
@@ -42,7 +44,7 @@ body {
   box-shadow: none;
   border: none;
   text-align: center;
-  margin-top: -20px;
+  margin-top: -40px;
   display: block;
   float: left;
 }
@@ -59,6 +61,7 @@ body {
   margin-bottom: -20px;
   font-size: 25px;
   text-align: center;
+  text-shadow: none;
 }
 
 #main-emoji-description::first-letter,
@@ -69,11 +72,13 @@ body {
 #card-title {
   margin-left: 20px;
   font-size: 50px;
+  text-shadow: 1px 1px 1px rgb(68, 195, 198);
 }
 
 .temperature {
   font-size: 45px;
   margin-left: 20px;
+  text-shadow: 0.5px 0.5px 0.5px rgb(68, 195, 198);
 }
 
 .units {
@@ -81,40 +86,21 @@ body {
   font-size: 22px;
   float: right;
   top: -8px;
+  text-shadow: none;
 }
 
-.units .active{
+.units .active {
   color: #000;
   cursor: default;
 }
 
-.units .active:hover{
-   text-decoration: none;
- }
-
+.units .active:hover {
+  text-decoration: none;
+}
 
 .card-text {
   font-size: 30px;
-}
-
-.weather-descriptions {
-  margin-top: 35px;
-  background: rgba(245, 242, 242, 0);
-  border: none;
-  line-height: 45px;
-}
-
-#humidity,
-#wind {
-  padding: 0;
-  font-size: 20px;
-  display: flex;
-}
-
-#humidity-element,
-#wind-speed {
-  margin-left: 7px;
-  margin-right: 4px;
+   margin-top: 5px;
 }
 
 input[type="text"],
@@ -126,6 +112,8 @@ input[type="button"] {
   font-size: large;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 7px;
+  color: rgb(0, 18, 21);
+ border-radius: 5%;
 }
 
 input[type="submit"] {
@@ -133,15 +121,37 @@ input[type="submit"] {
 }
 
 ::placeholder {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 18, 21);
   opacity: 1;
+  overflow-wrap: normal;
+  }
+
+.weather-descriptions {
+  margin-top: 35px;
+  background: rgba(245, 242, 242, 0);
+  border: none;
+  line-height: 45px;
 }
 
 #currant-date {
   display: inline;
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 30px;
   padding: 0;
+  }
+
+#humidity,
+#wind {
+  padding: 0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-shadow: none;
+  display: flex;
+}
+
+#humidity-element,
+#wind-speed {
+  margin-left: 7px;
+  margin-right: 4px;
 }
 
 .row .card {
@@ -149,19 +159,36 @@ input[type="submit"] {
   border-color: none;
   border-width: 0px;
   margin-bottom: 30px;
+  margin-top: 60px;
+  padding: 10px;
   text-align: center;
+  font-size: 22px;
   border-radius: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin-top: 10px;
+  display: block;
 }
 
-#cards {
-  margin-top: 60px;
+.weather-forecast {
+  color: rgb(0, 41, 47);
+}
+.weather-forecast-day {
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px 0.5px rgb(68, 195, 198);
 }
 
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+  font-size: 18px;
+}
+
+#weather-forecast-icon {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
 footer,
 #github-code-link {
-  color: #000000;
+  color: #131313;
   text-align: center;
   font-size: 17px;
   margin-top: 10px;

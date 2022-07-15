@@ -46,6 +46,31 @@ function formatDate(timestamp) {
   return `${month} ${date}, ${year}`;
 }
 
+function showForecastWeather() {
+  let forecastWeatherElement = document.querySelector("#weather-forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastWeatherHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastWeatherHTML =
+      forecastWeatherHTML +
+      `
+ <div class="col-2">
+   <div class="card" style="width: autom">
+    <div class="weather-forecast-day">${day}</div>
+     <div class="weather-forecast-temperature">
+      <div class="weather-forecast-temperature-max">12℃</div>
+       <div class="weather-forecast-temperature-min">12℃</div>
+     </div>
+      <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="" id="weather-forecast-icon"></img>
+    </div>
+  </div>
+          `;
+  });
+  forecastWeatherHTML = forecastWeatherHTML + `</div>`;
+  forecastWeatherElement.innerHTML = forecastWeatherHTML;
+}
+
 function showCurrentTemperature(response) {
   let currantDayElement = document.querySelector("#currant-day");
   let currantDateElement = document.querySelector("#currant-date");
@@ -80,7 +105,7 @@ function showCity(city) {
 function searchSubmit(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#enter-city");
-  
+
   let cardTitle = document.querySelector("#card-title");
   if (inputCity.value) {
     cardTitle.innerHTML = `${inputCity.value}`;
@@ -119,6 +144,7 @@ let showCityForm = document.querySelector("#show-city");
 showCityForm.addEventListener("submit", searchSubmit);
 
 showCity("Kyiv");
+showForecastWeather();
 
 //// current
 
@@ -136,3 +162,5 @@ function getCurrentPosition(event) {
 }
 let buttonCurrentPosition = document.querySelector("#currant-location");
 buttonCurrentPosition.addEventListener("click", getCurrentPosition);
+
+
