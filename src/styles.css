@@ -60,7 +60,7 @@ body {
 #main-emoji-description {
   font-style: italic;
   margin-bottom: -20px;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow: none;
 }
 
@@ -98,7 +98,7 @@ body {
 }
 
 .card-text {
-  font-size: 27px;
+  font-size: 25px;
   margin-top: 5px;
 }
 
@@ -201,13 +201,19 @@ width: 100%;
   margin-bottom: -10px;
 }
 footer,
-#github-code-link {
-  color: #131313;
+#linkedin-link,
+#github-code-link,
+#netlify-link {
+  color: #073c4e;
+  text-shadow: 0.5px 0.3px 0.5px rgb(96, 159, 173);
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   margin-top: 10px;
   font-weight: 500;
-}
-#github-code-link {
+  }
+
+#linkedin-link,
+#github-code-link,
+#netlify-link {
   text-decoration-line: underline;
 }
