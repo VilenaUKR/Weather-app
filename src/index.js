@@ -130,7 +130,6 @@ function showCity(city) {
 function searchSubmit(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#enter-city");
-
   let cardTitle = document.querySelector("#card-title");
   if (inputCity.value) {
     cardTitle.innerHTML = `${inputCity.value}`;
@@ -138,7 +137,9 @@ function searchSubmit(event) {
     alert("Please, enter a city 🤷‍♂️");
   }
   showCity(inputCity.value);
-}
+
+ }
+
 
 function convertToFahrenheit(event) {
   event.preventDefault();

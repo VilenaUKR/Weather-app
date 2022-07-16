@@ -17,8 +17,8 @@
     <div class="container-wrapper" style="max-width:850px">
       <div class="container" style="max-width:850px">
         <div class="row">
-          <div class="col-8">
-            <div class="row" id="main-card">
+          <div class="col-6">
+            <div class="row justify-content-center" id="main-card">
               <div class="main-card"><img src="https://openweathermap.org/img/wn/04n@2x.png" alt="clear sky"
                   id="icon"></img>
                 <div class="main-emoji-description" id="main-emoji-description">Today is a great day</div>
@@ -34,21 +34,22 @@
               </div>
             </div>
           </div>
+          <div class="col-2"></div>
           <div class="col-4">
             <form id="show-city">
-              <div class="enter-city">
-                <input type="text" id="enter-city" placeholder="Enter a city . . . 🙂" autofocus="on"
+              <span class="enter-city">
+                <input type="text" id="enter-city" placeholder="Type a city ..." autofocus="on"
                   autocomplete="off" />
-              </div>
-              <div class="input-group-submit">
-                <input type="button" value="Currant location" id="currant-location" />
-                <input type="submit" value="Search" id="search" />
-              </div>
+                  <input type="submit" value="🔍" id="search" />
+              </span>
+              <div class="currant-location">
+                <input type="button" value="Currant location" id="currant-location"/>
+               </div>
             </form>
             <div class="weather-descriptions">
-              <div class="col-4" id="currant-date"></div>
-              <div class="col-4" id="humidity">Humidity: <span id="humidity-element"></span>%</div>
-              <div class="col-4" id="wind">Wind: <span id="wind-speed"></span> km/h</div>
+              <div class="date" id="currant-date"></div>
+              <div class="humidity" id="humidity">Humidity: <span id="humidity-element"></span>%</div>
+              <div class="wind" id="wind">Wind: <span id="wind-speed"></span> km/h</div>
             </div>
           </div>
         </div>
