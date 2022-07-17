@@ -35,7 +35,6 @@ body {
   border-radius: 2%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 80px;
-  font-family: Verdana, Tahoma, sans-serif, monospace;
   color: rgb(0, 18, 21);
     }
 
@@ -49,7 +48,9 @@ body {
   box-shadow: none;
   border: none;
  text-align: center;
-  margin-top: -10px;}
+  margin-top: -10px;
+font-family:'Times New Roman', Times, serif 
+}
 
   
  
@@ -161,6 +162,7 @@ width: 100%;
   font-size: 20px;
   letter-spacing: 1px;
   text-shadow: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 
 #humidity-element,
