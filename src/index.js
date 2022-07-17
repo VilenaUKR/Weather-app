@@ -64,7 +64,8 @@ function formatForecastWeatherDay(timestamp) {
 function displayImage(icon) {
   let iconPath = "";
   if (icon === "01d") {
-    iconPath = "src/icons/image01d.png";
+    iconPath =
+      "https://github.com/VilenaUKR/Weather-app/tree/main/src/icons/image01d.png";
   } else if (icon === "02d") {
     iconPath = "src/icons/image02d.png";
   } else if (
