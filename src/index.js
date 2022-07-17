@@ -54,12 +54,12 @@ function formatForecastWeatherDay(timestamp) {
 }
 
 function displayImage(icon) {
-  let iconPath = "";
-  if (icon === "01d") {
+  let iconPath = "media/image01d.png";
+  if (icon === `01d`) {
     iconPath = "media/image01d.png";
-  } else if (icon === "02d") {
+  } else if (icon === `02d`) {
     iconPath = "media/image02d.png";
-  } else if (icon === "03d") {
+  } else if (icon === `03d`) {
     iconPath = "media/image03d.png";
   } else if (icon === `04d`) {
     iconPath = "media/image04d.png";
