@@ -36,6 +36,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 80px;
   color: rgb(0, 18, 21);
+  font-family:Georgia, 'Times New Roman', Times, serif 
     }
 
   .col-8 {
@@ -49,7 +50,6 @@ body {
   border: none;
  text-align: center;
   margin-top: -10px;
-font-family:'Times New Roman', Times, serif 
 }
 
   
@@ -146,7 +146,7 @@ width: 100%;
   margin-top: 35px;
   background: rgba(245, 242, 242, 0);
   border: none;
-  line-height: 45px;
+  line-height: 40px;
   width: 115%;
   float: right;
   }
@@ -162,7 +162,6 @@ width: 100%;
   font-size: 20px;
   letter-spacing: 1px;
   text-shadow: none;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 
 #humidity-element,
