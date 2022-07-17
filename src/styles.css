@@ -34,9 +34,9 @@ body {
   padding: 30px 20px 20px 20px;
   border-radius: 2%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin-top: 80px;
-  color: rgb(0, 18, 21);
-  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 60px;
+  color: rgba(3, 11, 62, 0.87);
+  font-family: "Times New Roman", Times, serif;
 }
 
 .col-8 {
@@ -58,7 +58,7 @@ body {
 
 #main-emoji-description {
   font-style: italic;
-  margin-bottom: -30px;
+  margin-bottom: -35px;
   font-size: 20px;
   text-shadow: none;
 }
@@ -70,15 +70,17 @@ body {
 
 #card-title {
   margin-left: 20px;
-  font-size: 47px;
-  text-shadow: 0.5px 0.5px 0.5px rgb(68, 195, 198);
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 1px 2px 2px rgba(144, 221, 237, 0.3);
 }
 
 .temperature {
   font-size: 43px;
   margin-left: 10px;
-  text-shadow: 0.5px 0.5px 0.5px rgb(68, 195, 198);
-}
+   font-weight: bold;
+   text-shadow: 1px 2px 2px rgba(144, 221, 237, 0.3);
+  }
 
 .units {
   position: relative;
@@ -98,8 +100,7 @@ body {
 
 .card-text {
   font-size: 25px;
-  margin-top: 5px;
-}
+  }
 
 #show-city {
   width: 115%;
@@ -114,26 +115,27 @@ input[type="text"],
 input[type="submit"],
 input[type="button"] {
   background: rgba(245, 242, 242, 0);
-  border: none;
+  border-color: rgba(144, 221, 237, 0.3);
   padding: 4px 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 0 5px rgba(144, 221, 237, 0.3);
   margin-top: 7px;
-  color: rgb(0, 18, 21);
+  color: rgba(1, 5, 31, 0.87);
   border-radius: 2%;
-}
+  }
 
 input[type="text"] {
   width: 100%;
+border-color: rgba(144, 221, 237, 0.3);
 }
 
 input[type="button"] {
   width: 100%;
+  letter-spacing: 1px;
 }
 
 ::placeholder {
-  color: rgb(0, 18, 21);
-  opacity: 1;
-}
+color: rgba(1, 5, 31, 0.87);
+  }
 
 .weather-descriptions {
   margin-top: 35px;
@@ -166,7 +168,7 @@ input[type="button"] {
 .card {
   height: 80%;
   margin-bottom: 15px;
-}
+  }
 
 .row .card {
   background: transparent;
@@ -175,26 +177,22 @@ input[type="button"] {
   margin-top: 40px;
   padding: 8px;
   text-align: center;
-  font-size: 22px;
+  font-size: 23px;
   border-radius: 5%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 100%;
-}
+  box-shadow: 1px 1px 0px 0px rgba(144, 221, 237, 0.3);
 
-.weather-forecast {
-  color: rgb(0, 41, 47);
 }
 
 .weather-forecast-day {
-  font-size: 20px;
+  font-size: 21px;
   margin-bottom: 5px;
   font-weight: 600;
-  text-shadow: 0.3px 0.3px 0.3px rgb(68, 195, 198);
 }
 
 .weather-forecast-temperature-min {
   opacity: 0.8;
-  font-size: 16px;
+  font-size: 22px;
   margin-bottom: 5px;
 }
 
@@ -205,7 +203,7 @@ footer,
   color: #03232e;
   text-shadow: 0.5px 0.3px 0.5px rgb(96, 159, 173);
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 10px;
 }
 
