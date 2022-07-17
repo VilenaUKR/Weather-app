@@ -61,6 +61,56 @@ function formatForecastWeatherDay(timestamp) {
   return days[day]
 }
 
+function displayImage(icon) {
+  let iconPath = "";
+  if (icon === "01d") {
+    iconPath = "icons/01d.png";
+  } else if (icon === "02d") {
+    iconPath = "icons/02d.png";
+  } else if (
+    icon === "03d") {
+    iconPath = "icons/03d.png";
+    } else if (
+    icon === `04d`) {
+    iconPath = "icons/04d.png";
+  } else if (icon === `09d`) {
+    iconPath = "icons/09d.png";
+  } else if (icon === `10d`) {
+    iconPath = "icons/10d.png";
+  } else if (icon === `11d`) {
+    iconPath = "icons/11d.png";
+  } else if (icon === `13d`) {
+    iconPath = "icons/13d.png";
+  } else if (icon === `50d`) {
+    iconPath = "icons/50d.png";
+  } else if (icon === "01n") {
+    iconPath = "/icons/01n.png";
+  } else if (icon === "02") {
+    iconPath = "/icons/02n.png";
+  } else if (
+    icon === "03n") {
+    iconPath = "/icons/03n.png";
+    } else if (
+    icon === "04n") {
+    iconPath = "icons/04n.png";
+  } else if (icon === "09n") {
+    iconPath = "icons/09n.png";
+  } else if (icon === "10n") {
+    iconPath = "icons/10n.png";
+  } else if (icon === "11n") {
+    iconPath = "icons/11n.png";
+  } else if (icon === "13n") {
+    iconPath = "icons/13n.png";
+  } else if (icon === "50n") {
+    iconPath = "icons/50n.png";
+  } else {
+    iconPath = "icons/03d.png";
+  }
+
+  return iconPath;
+}
+
+
 function showForecastWeather(response) {
  let forecastWeather = response.data.daily;
  
@@ -74,12 +124,18 @@ function showForecastWeather(response) {
       `
  <div class="col-2">
    <div class="card" style="width: autom">
-    <div class="weather-forecast-day">${formatForecastWeatherDay(forecastDay.dt)}</div>
+    <div class="weather-forecast-day">${formatForecastWeatherDay(
+      forecastDay.dt
+    )}</div>
      <div class="weather-forecast-temperature">
-      <div class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</div>
-       <div class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</div>
+      <div class="weather-forecast-temperature-max">${Math.round(
+        forecastDay.temp.max
+      )}°</div>
+       <div class="weather-forecast-temperature-min">${Math.round(
+         forecastDay.temp.min
+       )}°</div>
      </div>
-      <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" id="weather-forecast-icon"></img>
+      <img src="${displayImage(forecastDay.weather[0].icon)}" id="icon"></img>
     </div>
   </div>
           `;}
@@ -102,7 +158,8 @@ function showCurrentTemperature(response) {
   let cityElement = document.querySelector("#card-title");
   let humidityElement = document.querySelector("#humidity-element");
   let windSpeedElement = document.querySelector("#wind-speed");
-  let iconElement = document.querySelector("#icon");
+  let icon = document.querySelector("#icon");
+  let iconElement = response.data.weather["0"].icon;
   //
   celsiusTemperature = response.data.main.temp;
   cityElement.innerHTML = response.data.name;
@@ -112,11 +169,8 @@ function showCurrentTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  icon.setAttribute("src", displayImage(iconElement));
+  mainIconDescription.setAttribute("alt", response.data.weather[0].description);
   
   getForecastWeather(response.data.coord);
 }

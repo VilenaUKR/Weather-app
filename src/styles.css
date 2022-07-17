@@ -49,17 +49,19 @@ body {
   box-shadow: none;
   border: none;
  text-align: center;
-  margin-top: -40px;
-  }
+  margin-top: -10px;}
 
-#icon {
-  margin-bottom: -30px;
-  width: 150px;
+  
+ 
+ .main-card
+ [id="icon"] {
+  width: 170px;
+  margin-bottom: -10px;
  }
 
 #main-emoji-description {
   font-style: italic;
-  margin-bottom: -20px;
+  margin-bottom: -30px;
   font-size: 20px;
   text-shadow: none;
 }
@@ -167,19 +169,24 @@ width: 100%;
   margin-right: 4px;
 }
 
+
+.card {
+    height: 80%;
+    margin-bottom: 15px;
+}
+
 .row .card {
   background: transparent;
   border-color: none;
   border-width: 0px;
-  margin-bottom: 30px;
-  margin-top: 60px;
+  margin-top: 40px;
   padding: 8px;
   text-align: center;
   font-size: 20px;
   border-radius: 5%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
- width: 100%;
-}
+  width: 100%;
+   }
 
 .weather-forecast {
   color: rgb(0, 41, 47);
@@ -194,26 +201,22 @@ width: 100%;
 .weather-forecast-temperature-min {
   opacity: 0.6;
   font-size: 17px;
+  margin-bottom: 5px;
 }
 
-#weather-forecast-icon {
-  margin-top: -10px;
-  margin-bottom: -10px;
-}
 footer,
 #linkedin-link,
 #github-code-link,
 #netlify-link {
-  color: #073c4e;
+  color: #042631;
   text-shadow: 0.5px 0.3px 0.5px rgb(96, 159, 173);
   text-align: center;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 14px;
   font-weight: 500;
   }
 
 #linkedin-link,
 #github-code-link,
 #netlify-link {
-  text-decoration-line: underline;
+text-decoration-line: underline;
 }
