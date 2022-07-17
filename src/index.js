@@ -48,81 +48,67 @@ function formatDate(timestamp) {
 
 function formatForecastWeatherDay(timestamp) {
   let date = new Date(timestamp * 1000);
-   let day = date.getDay();
-  let days = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-  ];
-  return days[day]
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 function displayImage(icon) {
   let iconPath = "";
   if (icon === "01d") {
-    iconPath =
-      "src/icons/image01d.png";
+    iconPath = "media/image01d.png";
   } else if (icon === "02d") {
-    iconPath = "src/icons/image02d.png";
-  } else if (
-    icon === "03d") {
-    iconPath = "src/icons/image03d.png";
-    } else if (
-    icon === `04d`) {
-    iconPath = "src/icons/image04d.png";
+    iconPath = "media/image02d.png";
+  } else if (icon === "03d") {
+    iconPath = "media/image03d.png";
+  } else if (icon === `04d`) {
+    iconPath = "media/image04d.png";
   } else if (icon === `09d`) {
-    iconPath = "src/icons/image09d.png";
+    iconPath = "media/image09d.png";
   } else if (icon === `10d`) {
-    iconPath = "src/icons/image10d.png";
+    iconPath = "media/image10d.png";
   } else if (icon === `11d`) {
-    iconPath = "src/icons/image11d.png";
+    iconPath = "media/image11d.png";
   } else if (icon === `13d`) {
-    iconPath = "src/icons/image13d.png";
+    iconPath = "media/image13d.png";
   } else if (icon === `50d`) {
-    iconPath = "src/icons/image50d.png";
+    iconPath = "media/image50d.png";
   } else if (icon === `01n`) {
-    iconPath = "src/icons/image01n.png";
+    iconPath = "media/image01n.png";
   } else if (icon === `02`) {
-    iconPath = "src/icons/image02n.png";
-  } else if (
-    icon === `03n`) {
-    iconPath = "src/icons/image03n.png";
-    } else if (
-    icon === `04n`) {
-    iconPath = "src/icons/image04n.png";
+    iconPath = "media/image02n.png";
+  } else if (icon === `03n`) {
+    iconPath = "media/image03n.png";
+  } else if (icon === `04n`) {
+    iconPath = "media/image04n.png";
   } else if (icon === `09n`) {
-    iconPath = "src/icons/image09n.png";
+    iconPath = "media/image09n.png";
   } else if (icon === `10n`) {
-    iconPath = "src/icons/image10n.png";
+    iconPath = "media/image10n.png";
   } else if (icon === `11n`) {
-    iconPath = "src/icons/image11n.png";
+    iconPath = "media/image11n.png";
   } else if (icon === `13n`) {
-    iconPath = "src/icons/image13n.png";
+    iconPath = "media/image13n.png";
   } else if (icon === `50n`) {
-    iconPath = "src/icons/image50n.png";
+    iconPath = "media/image50n.png";
   } else {
-    iconPath = "src/icons/image03d.png";
+    iconPath = "media/image03d.png";
   }
 
   return iconPath;
 }
 
-
 function showForecastWeather(response) {
- let forecastWeather = response.data.daily;
- 
+  let forecastWeather = response.data.daily;
+
   let forecastWeatherElement = document.querySelector("#weather-forecast");
-  
+
   let forecastWeatherHTML = `<div class="row">`;
   forecastWeather.forEach(function (forecastDay, index) {
     if (index < 6) {
-    forecastWeatherHTML =
-      forecastWeatherHTML +
-      `
+      forecastWeatherHTML =
+        forecastWeatherHTML +
+        `
  <div class="col-2">
    <div class="card" style="width: autom">
     <div class="weather-forecast-day">${formatForecastWeatherDay(
@@ -139,7 +125,8 @@ function showForecastWeather(response) {
       <img src="${displayImage(forecastDay.weather[0].icon)}" id="icon"></img>
     </div>
   </div>
-          `;}
+          `;
+    }
   });
   forecastWeatherHTML = forecastWeatherHTML + `</div>`;
   forecastWeatherElement.innerHTML = forecastWeatherHTML;
@@ -172,7 +159,7 @@ function showCurrentTemperature(response) {
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   icon.setAttribute("src", displayImage(iconElement));
   mainIconDescription.setAttribute("alt", response.data.weather[0].description);
-  
+
   getForecastWeather(response.data.coord);
 }
 
@@ -192,9 +179,7 @@ function searchSubmit(event) {
     alert("Please, enter a city 🤷‍♂️");
   }
   showCity(inputCity.value);
-
- }
-
+}
 
 function convertToFahrenheit(event) {
   event.preventDefault();
