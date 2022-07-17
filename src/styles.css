@@ -36,29 +36,25 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 80px;
   color: rgb(0, 18, 21);
-  font-family:Georgia, 'Times New Roman', Times, serif 
-    }
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
 
-  .col-8 {
- text-align: center;
- 
-  }
+.col-8 {
+  text-align: center;
+}
 
 .row #main-card {
   line-height: 60px;
   box-shadow: none;
   border: none;
- text-align: center;
+  text-align: center;
   margin-top: -10px;
 }
 
-  
- 
- .main-card
- [id="icon"] {
+.main-card [id="icon"] {
   width: 170px;
   margin-bottom: -10px;
- }
+}
 
 #main-emoji-description {
   font-style: italic;
@@ -105,13 +101,12 @@ body {
   margin-top: 5px;
 }
 
-#show-city{
+#show-city {
   width: 115%;
   float: right;
- }
+}
 
-
-.enter-city{
+.enter-city {
   display: flex;
 }
 
@@ -125,21 +120,19 @@ input[type="button"] {
   margin-top: 7px;
   color: rgb(0, 18, 21);
   border-radius: 2%;
-   }
+}
 
-input[type="text"]{
+input[type="text"] {
   width: 100%;
-  }
+}
 
-input[type="button"]
-{
-width: 100%;
-  }
+input[type="button"] {
+  width: 100%;
+}
 
 ::placeholder {
   color: rgb(0, 18, 21);
   opacity: 1;
-  
 }
 
 .weather-descriptions {
@@ -149,7 +142,7 @@ width: 100%;
   line-height: 40px;
   width: 115%;
   float: right;
-  }
+}
 
 #currant-date {
   font-size: 30px;
@@ -162,7 +155,7 @@ width: 100%;
   font-size: 20px;
   letter-spacing: 1px;
   text-shadow: none;
-  }
+}
 
 #humidity-element,
 #wind-speed {
@@ -170,10 +163,9 @@ width: 100%;
   margin-right: 4px;
 }
 
-
 .card {
-    height: 80%;
-    margin-bottom: 15px;
+  height: 80%;
+  margin-bottom: 15px;
 }
 
 .row .card {
@@ -187,7 +179,7 @@ width: 100%;
   border-radius: 5%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 100%;
-   }
+}
 
 .weather-forecast {
   color: rgb(0, 41, 47);
@@ -210,16 +202,16 @@ footer,
 #linkedin-link,
 #github-code-link,
 #netlify-link {
-  color: #042631;
+  color: #03232e;
   text-shadow: 0.5px 0.3px 0.5px rgb(96, 159, 173);
   text-align: center;
   font-size: 15px;
-  font-weight: 500;
   margin-top: 10px;
-  }
+}
 
 #linkedin-link,
 #github-code-link,
 #netlify-link {
-text-decoration-line: underline;
+  text-decoration-line: underline;
+  font-weight: 600;
 }

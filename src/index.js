@@ -64,47 +64,47 @@ function formatForecastWeatherDay(timestamp) {
 function displayImage(icon) {
   let iconPath = "";
   if (icon === "01d") {
-    iconPath = "icons/image01d.png";
+    iconPath = "src/icons/image01d.png";
   } else if (icon === "02d") {
-    iconPath = "icons/image02d.png";
+    iconPath = "src/icons/image02d.png";
   } else if (
     icon === "03d") {
-    iconPath = "icons/image03d.png";
+    iconPath = "src/icons/image03d.png";
     } else if (
     icon === `04d`) {
-    iconPath = "icons/image04d.png";
+    iconPath = "src/icons/image04d.png";
   } else if (icon === `09d`) {
-    iconPath = "icons/image09d.png";
+    iconPath = "src/icons/image09d.png";
   } else if (icon === `10d`) {
-    iconPath = "icons/image10d.png";
+    iconPath = "src/icons/image10d.png";
   } else if (icon === `11d`) {
-    iconPath = "icons/image11d.png";
+    iconPath = "src/icons/image11d.png";
   } else if (icon === `13d`) {
-    iconPath = "icons/image13d.png";
+    iconPath = "src/icons/image13d.png";
   } else if (icon === `50d`) {
-    iconPath = "icons/image50d.png";
+    iconPath = "src/icons/image50d.png";
   } else if (icon === `01n`) {
-    iconPath = "/icons/image01n.png";
+    iconPath = "src/icons/image01n.png";
   } else if (icon === `02`) {
-    iconPath = "/icons/image02n.png";
+    iconPath = "src/icons/image02n.png";
   } else if (
     icon === `03n`) {
-    iconPath = "/icons/image03n.png";
+    iconPath = "src/icons/image03n.png";
     } else if (
     icon === `04n`) {
-    iconPath = "icons/image04n.png";
+    iconPath = "src/icons/image04n.png";
   } else if (icon === `09n`) {
-    iconPath = "icons/image09n.png";
+    iconPath = "src/icons/image09n.png";
   } else if (icon === `10n`) {
-    iconPath = "icons/image10n.png";
+    iconPath = "src/icons/image10n.png";
   } else if (icon === `11n`) {
-    iconPath = "icons/image11n.png";
+    iconPath = "src/icons/image11n.png";
   } else if (icon === `13n`) {
-    iconPath = "icons/image13n.png";
+    iconPath = "src/icons/image13n.png";
   } else if (icon === `50n`) {
-    iconPath = "icons/image50n.png";
+    iconPath = "src/icons/image50n.png";
   } else {
-    iconPath = "icons/image03d.png";
+    iconPath = "src/icons/image03d.png";
   }
 
   return iconPath;
