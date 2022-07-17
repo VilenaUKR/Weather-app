@@ -231,7 +231,7 @@ buttonCurrentPosition.addEventListener("click", getCurrentPosition);
 document.addEventListener("DOMContentLoaded", function (event) {
   document.querySelectorAll("img").forEach(function (img) {
     img.onerror = function () {
-      this.src = "img/share/default.png";
+      this.src = "media/image01d.png";
     };
   });
 });
