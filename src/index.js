@@ -227,11 +227,3 @@ function getCurrentPosition(event) {
 }
 let buttonCurrentPosition = document.querySelector("#currant-location");
 buttonCurrentPosition.addEventListener("click", getCurrentPosition);
-
-document.addEventListener("DOMContentLoaded", function (event) {
-  document.querySelectorAll("img").forEach(function (img) {
-    img.onerror = function () {
-      this.src = "media/image01d.png";
-    };
-  });
-});
