@@ -54,9 +54,9 @@ function formatForecastWeatherDay(timestamp) {
 }
 
 function displayImage(icon) {
-  let iconPath = "media/image01.svg";
+  let iconPath = "media/image01d.svg";
   if (icon === `01d`) {
-    iconPath = "media/image01.svg";
+    iconPath = "media/image01d.svg";
   } else if (icon === `02d`) {
     iconPath = "media/image02d.svg";
   } else if (icon === `03d`) {
