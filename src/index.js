@@ -54,11 +54,11 @@ function formatForecastWeatherDay(timestamp) {
 }
 
 function displayImage(icon) {
-  let iconPath = "media/image01d.png";
+  let iconPath = "media/image01.svg";
   if (icon === `01d`) {
-    iconPath = "media/image01d.png";
+    iconPath = "media/image01.svg";
   } else if (icon === `02d`) {
-    iconPath = "media/image02d.png";
+    iconPath = "media/image02d.svg";
   } else if (icon === `03d`) {
     iconPath = "media/image03d.png";
   } else if (icon === `04d`) {
@@ -76,7 +76,7 @@ function displayImage(icon) {
   } else if (icon === `01n`) {
     iconPath = "media/image01n.png";
   } else if (icon === `02`) {
-    iconPath = "media/image02n.png";
+    iconPath = "media/image02d.svg";
   } else if (icon === `03n`) {
     iconPath = "media/image03n.png";
   } else if (icon === `04n`) {
