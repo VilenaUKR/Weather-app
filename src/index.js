@@ -54,45 +54,45 @@ function formatForecastWeatherDay(timestamp) {
 }
 
 function displayImage(icon) {
-  let iconPath = "image01d.svg";
+  let iconPath = "icons/image01d.png";
   if (icon === `01d`) {
-    iconPath = "image01d.svg";
+    iconPath = "icons/image01d.png";
   } else if (icon === `02d`) {
-    iconPath = "image02d.svg";
+    iconPath = "icons/image02d.png";
   } else if (icon === `03d`) {
-    iconPath = "image03d.png";
+    iconPath = "icons/image03d.png";
   } else if (icon === `04d`) {
-    iconPath = "image04d.png";
+    iconPath = "icons/image04d.png";
   } else if (icon === `09d`) {
-    iconPath = "media/image09d.png";
+    iconPath = "icons/image09d.png";
   } else if (icon === `10d`) {
-    iconPath = "media/image10d.png";
+    iconPath = "icons/image10d.png";
   } else if (icon === `11d`) {
-    iconPath = "media/image11d.png";
+    iconPath = "icons/media/image11d.png";
   } else if (icon === `13d`) {
-    iconPath = "media/image13d.png";
+    iconPath = "icons/media/image13d.png";
   } else if (icon === `50d`) {
-    iconPath = "media/image50d.png";
+    iconPath = "icons/media/image50d.png";
   } else if (icon === `01n`) {
-    iconPath = "media/image01n.png";
+    iconPath = "icons/media/image01n.png";
   } else if (icon === `02`) {
-    iconPath = "image02d.svg";
+    iconPath = "icons/image02n.png";
   } else if (icon === `03n`) {
-    iconPath = "image03n.png";
+    iconPath = "icons/image03n.png";
   } else if (icon === `04n`) {
-    iconPath = "image04n.png";
+    iconPath = "icons/image04n.png";
   } else if (icon === `09n`) {
-    iconPath = "media/image09n.png";
+    iconPath = "icons/image09n.png";
   } else if (icon === `10n`) {
-    iconPath = "media/image10n.png";
+    iconPath = "icons/image10n.png";
   } else if (icon === `11n`) {
-    iconPath = "media/image11n.png";
+    iconPath = "icons/image11n.png";
   } else if (icon === `13n`) {
-    iconPath = "media/image13n.png";
+    iconPath = "icons/image13n.png";
   } else if (icon === `50n`) {
-    iconPath = "media/image50n.png";
+    iconPath = "icons/image50n.png";
   } else {
-    iconPath = "media/image03d.png";
+    iconPath = "icons/image03d.png";
   }
 
   return iconPath;
@@ -122,7 +122,9 @@ function showForecastWeather(response) {
          forecastDay.temp.min
        )}°</div>
      </div>
-      <img src="${displayImage(forecastDay.weather[0].icon)}" id="icon"></img>
+     <img src="${displayImage(
+       forecastDay.weather[0].icon
+     )}" alt="" class="img-forecast" />
     </div>
   </div>
           `;
@@ -146,8 +148,8 @@ function showCurrentTemperature(response) {
   let cityElement = document.querySelector("#card-title");
   let humidityElement = document.querySelector("#humidity-element");
   let windSpeedElement = document.querySelector("#wind-speed");
-  let icon = document.querySelector("#icon");
-  let iconElement = response.data.weather["0"].icon;
+  let image = document.querySelector("#image");
+  let icon = response.data.weather["0"].icon;
   //
   celsiusTemperature = response.data.main.temp;
   cityElement.innerHTML = response.data.name;
@@ -157,9 +159,8 @@ function showCurrentTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-  icon.setAttribute("src", displayImage(iconElement));
-  mainIconDescription.setAttribute("alt", response.data.weather[0].description);
-
+  image.setAttribute("src", displayImage(icon));
+  
   getForecastWeather(response.data.coord);
 }
 
