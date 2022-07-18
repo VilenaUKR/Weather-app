@@ -58,11 +58,11 @@ function displayImage(icon) {
   if (icon === `01d`) {
     iconPath = "image01d.svg";
   } else if (icon === `02d`) {
-    iconPath = "./media/image02d.svg";
+    iconPath = "image02d.svg";
   } else if (icon === `03d`) {
-    iconPath = "media/image03d.png";
+    iconPath = "image03d.png";
   } else if (icon === `04d`) {
-    iconPath = "media/image04d.png";
+    iconPath = "image04d.png";
   } else if (icon === `09d`) {
     iconPath = "media/image09d.png";
   } else if (icon === `10d`) {
@@ -76,11 +76,11 @@ function displayImage(icon) {
   } else if (icon === `01n`) {
     iconPath = "media/image01n.png";
   } else if (icon === `02`) {
-    iconPath = "media/image02d.svg";
+    iconPath = "image02d.svg";
   } else if (icon === `03n`) {
-    iconPath = "media/image03n.png";
+    iconPath = "image03n.png";
   } else if (icon === `04n`) {
-    iconPath = "media/image04n.png";
+    iconPath = "image04n.png";
   } else if (icon === `09n`) {
     iconPath = "media/image09n.png";
   } else if (icon === `10n`) {
