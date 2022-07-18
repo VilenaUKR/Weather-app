@@ -53,7 +53,7 @@ function formatForecastWeatherDay(timestamp) {
   return days[day];
 }
 
-//function displayImage(icon) {
+function displayImage(icon) {
   let iconPath = "image01d.svg";
   if (icon === `01d`) {
     iconPath = "image01d.svg";
